@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <title>Playlist</title>
+</head>
+<body>
+
+    <h1 style="text-align:center ;">Playlist</h1> 
+    <h5 onclick="window.open('http://localhost:3000/form')">Click to add a song</h4> 
+    <h6 onclick="window.open('http://localhost:3000/search')">Click to search for a song</h6> 
+
+        </show/:id/edit
+       <% for (let item of items) { %> >
+
+        <div class="card text-white bg-primary">
+        <div class="card-body">
+        <li><%= item.name %> </li> 
+        <li><%= item.artist %> </li> 
+        <li><%= item.duration %> </li> 
+        <li><%= item.date %> </li> 
+        <a href="<%= item.link%>"><li style="color: white;"><%= item.link%> </li></a>
+        </div>
+    </div>
+
+            <button>
+                <a href="/<%= item._id%>/edit">Edit</a> 
+            </button>
+
+            <form action="/<%= item._id%>?_method=DELETE"  method="POST">
+                <button>Delete</button>
+             </form> 
+
+        </li>
+        <%} %>
+   </ul>
+
+</body>
+</html>

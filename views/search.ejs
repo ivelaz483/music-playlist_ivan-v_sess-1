@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <title>Playlist</title>
+</head>
+<body>
+    <h1 style="text-align:center ;">Search</h1> 
+    <input type = "text" id = "searchBar" oninput = "Search((this.value).toLowerCase())" placeholder = "Search...">
+    <br><br>
+
+        </show/:id/edit>
+       <% for (let item of items) { %> 
+
+    <ul style="text-align: center;">
+        <li class = "listItem"><a href="<%= item.link%>"><%= item.name %> - <%= item.artist %></a></li>
+        <!--li class = "listItem"><a href="/<%= item._id%>/edit"><%= item.artist %></a></li-->
+    </ul>
+        
+        <%} %>
+   
+   <script>
+    function Search(item){
+            var collection = document.getElementsByClassName("listItem");
+            for (i = 0;i < collection.length; i++){
+                if (((collection[i].innerHTML).toLowerCase()).indexOf(item) > -1) {
+                    collection[i].style.display = "block";
+                    } else {
+                        collection[i].style.display = "none";
+                        }
+            }
+    }
+    </script>
+
+</body>
+</html>
